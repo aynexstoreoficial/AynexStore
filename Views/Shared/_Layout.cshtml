@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AynexStore</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/AynexStore.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- NAVBAR CON FOTO DE FONDO -->
+    <nav class="navbar-principal" >
+        <div class="nav-overlay"></div>
+        <div class="nav-container">
+            <div class="nav-superior">
+                <a href="/" class="nav-logo">Aynex Store</a>
+                <div class="nav-enlaces">
+                    <a href="/" class="nav-link">Inicio</a>
+                    <a href="#productos" class="nav-link">Tienda</a>
+                    <a href="#sobre-aynex" class="nav-link">Sobre nosotros</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </div>
+            </div>
+            
+            <div class="nav-contenido">
+                <p class="nav-slogan">Productos de Calidad para tu Hogar</p>
+                <p class="nav-sub-slogan">Practicidad y estilo para tu cocina</p>
+                <a href="#contacto" class="btn-nav-comprar">Comprar Ahora</a>            
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido de cada vista -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Aynex Store - Todos los derechos reservados</p>
+    </footer>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

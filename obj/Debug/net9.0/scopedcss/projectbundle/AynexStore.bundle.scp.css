@@ -1,0 +1,118 @@
+/* _content/AynexStore/Views/Producto/Detalle.cshtml.rz.scp.css */
+/* Contenedor principal */
+.detalle-contenedor[b-3mq54q8rue] {
+  width: 100%;
+  padding: 3rem 2rem; /* margen interior en lugar de externo */
+}
+
+/* Grid de 3 columnas */
+.contenedor-tres-columnas[b-3mq54q8rue] {
+  display: grid;
+  grid-template-columns: 0.5fr 1.4fr 1.8fr;  /* miniaturas | imagen | texto */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ================================= NUEVOS ESTILOS PARA LAS CAJAS MINIATURA ======================= */
+/* Columna de miniaturas */
+.col-miniaturas[b-3mq54q8rue] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columnas de igual ancho */
+  gap: 1rem;  
+}
+
+/* Caja miniaturas */
+.img-miniatura[b-3mq54q8rue] {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* mantiene forma cuadrada */
+  border-radius: 8px;
+  object-fit: cover;
+  overflow: hidden;  
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.img-miniatura:hover[b-3mq54q8rue] {
+  border-color: #8d9c8d;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Imagen dentro de miniaturas */
+.img-miniatura img[b-3mq54q8rue] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Imagen principal */
+.col-medio[b-3mq54q8rue] {
+  width: 100%;
+}
+
+.col-medio[b-3mq54q8rue]  img.imagen-principal {
+  width: 100%;
+  height: auto;         /* se adapta solo, nunca rompe */
+  object-fit: contain;
+  display: block;
+}
+
+/* Texto */
+.col-texto[b-3mq54q8rue] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;  /* espacio entre elementos */
+  overflow-y: auto; /* solo aparece scroll si el contenido se sale del viewport */
+}
+
+.col-texto h1[b-3mq54q8rue] {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.col-texto .descripcion[b-3mq54q8rue] {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.col-texto .precio[b-3mq54q8rue] {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1C541D;
+  align-self: center;
+}
+
+.col-texto a[b-3mq54q8rue] {
+  background-color: #1C541D;
+  color: white;
+  border: 2px solid #1C541D;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  align-self: center;
+}
+
+.col-texto a:hover[b-3mq54q8rue] {
+  background-color: #2D7A2E;
+  border-color: #2D7A2E;
+  transform: scale(1.05);
+  color: white;
+}

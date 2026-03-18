@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Detalle - " + Model.Nombre;
+}
+
+<div class="detalle-contenedor">
+    <div class="contenedor-tres-columnas">
+        
+        <!-- Columna 1: Miniaturas verticales -->
+        <div class="col-miniaturas">
+            @for (int i = 0; i < Model.Imagenes.Count; i++)
+            {
+                <div class="img-miniatura" onclick="cambiarImagen(this)">
+                    <img src="~/imagen/@Model.Imagenes[i]">
+                </div>
+            }
+        </div>
+        
+
+        <!-- Columna 2: Imagen grande -->
+        <div class="col-medio">
+            <img src="~/imagen/@Model.Imagen" class="imagen-principal">
+        </div>
+
+        <!-- Columna 3: Texto del producto -->
+        <div class="col-texto">
+            <h1>@Model.Nombre</h1>
+            <p class="descripcion">@Model.Descripcion</p>
+            <p class="precio">@Model.Precio</p>
+            <a href="/#contacto" class="boton-comprar">Comprar ahora</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== MODAL PARA MOSTRAR TODAS LAS FOTOS NO FUnciona===== -->
+<div class="modal fade" id="modalFotos" tabindex="-1" aria-labelledby="modalFotosLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFotosLabel">Todas las fotos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carruselFotos" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-inner" id="contenedorCarrusel">
+                        <!-- Aquí se inyectarán las fotos con JavaScript -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselFotos" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselFotos" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ===== Script ===== -->
+
+<script src="~/js/detalle.js"></script>

@@ -1,0 +1,508 @@
+/* ============================================= ESTILOS GLOBALES ================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+        
+}
+/* ===================================== NAVBAR CON FOTO DE FONDO ===================================== */
+.navbar-principal {
+  background-image: url('/imagen/FotoPrueba.PNG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  padding: 0 0 4rem 0;  /* SOLO padding abajo, NADA arriba */
+  min-height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.nav-container {
+  margin: 0 2rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.nav-superior {
+  display: flex;
+  justify-content: space-between;  /* logo a la izquierda, menú a la derecha */
+  align-items: center;
+  width: 100%;                      /* que ocupe todo el ancho */
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;              /* evita que el logo se parta */
+}
+
+.nav-enlaces {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;                  /* si no caben, bajan */
+  justify-content: flex-end;        /* alineados a la derecha */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  background-color: #1C541D;
+  color: white;
+}
+
+.nav-link:active {
+  background-color: rgba(46, 125, 50, 0.2);
+}
+
+.nav-contenido {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+}
+
+.nav-slogan {
+  font-size: 2.5rem;     /* 40px - Grande pero no exagerado */
+  margin-bottom: 1rem;    /* Menos espacio abajo */
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.nav-sub-slogan {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+}
+
+.nav-sub-slogan::before,
+.nav-sub-slogan::after {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+/* BOTÓN VERDE OLIVA (como la foto) */
+.btn-nav-comprar {
+  text-decoration: none; /* quita el subrayado */
+  background-color: #1C541D;  
+  color: white;
+  border: 2px solid #1C541D;
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-nav-comprar:hover {
+  background-color: #2D7A2E;  /* Verde más claro y brillante */
+  border-color: #2D7A2E;
+}
+
+/* =========================== VENTAJAS (justo pegadas al navbar, sin superposición) ================ */
+
+.ventajas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 0.8rem 0.6rem 1rem 0.6rem;  /* reducido vertical y horizontal */
+  margin-top: 0;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 14px 25px rgba(0,0,0,0.35); /* sombra inferior */
+}
+.ventaja-item-envio,
+.ventaja-item-calidad,
+.ventaja-item-atencion {
+  flex: 1;                        /* ocupan el mismo ancho */
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;              /* centrar contenido */
+  padding: 1rem;                   /* espacio dentro del bloque */
+}
+.ventaja-item-calidad {
+  position: relative; /* necesario para las líneas */
+}
+  
+/*----------------------------------Línea izquierda-------------------------------------- */
+.ventaja-item-calidad::before {
+  content: '';
+  position: absolute;
+  top: 0;               /* no llega arriba */
+  bottom: 0;            /* no llega abajo */
+  left: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.2); /* sombra suave */
+}
+
+/* -----------------------------------Línea derecha------------------------------- */
+.ventaja-item-calidad::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* ========================================= PRODUCTOS DESTACADOS ================================= */
+
+/* ===== TÍTULO DE SECCIÓN CON LÍNEAS ===== */
+.productos {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 3rem 1rem 3rem 1em;  /* ↑ más espacio arriba */
+  background-color: white;
+}
+.productos h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.productos h2::before,
+.productos h2::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+}
+/*--------------------------------------------------------card-------------------------------------*/
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Tarjeta de producto con animación */
+.producto-card {
+  background: white;
+  border-radius: 10px;
+  padding: 0rem 0rem 4rem 0rem;
+  text-align: center;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.25);  /* sombra inferior más densa */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid #d1d1d1;  /* borde gris claro siempre visible */
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Efecto hover solo con elevación (sin cambiar borde) */
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 36px -10px rgba(0, 0, 0, 0.35);  
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 250px;      /* o fija si quieres un tamaño concreto */
+  margin-bottom: 1.7rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.producto-card:hover .producto-imagen {
+  transform: scale(1.02);
+}
+.producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;  /* fuerza la imagen a ocupar todo el espacio, aunque se deforme */
+  display: block;
+}
+.producto-card:hover .producto-imagen img {
+  transform: scale(1.1);
+}
+
+.producto-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+/*----------------------BOTÓN VERDE RECTANGULAR (como el del navbar)------------------------------ */
+.btn-link {
+  background-color: #1C541D;  /* verde oscuro base */
+  color: white;
+  border: 2px solid #1C541D;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-link:hover {
+  background-color: #2D7A2E;  /* verde más claro */
+  border-color: #2D7A2E;
+  transform: scale(1.05);
+  color: white;
+}
+/* ======================================= SOBRE AYNEX STORE (dos columnas) ========================== */
+.sobre-nosotros {
+  width: 100%;       /* ocupa todo el ancho disponible */
+  height: 100%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sobre-container {
+  width: 100%;         /* más ancho que antes */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;      /* columnas de la misma altura */
+  gap: 0;
+  background: transparent;
+}
+
+.sobre-texto {
+  background: linear-gradient(to right, #b0b0b0, white); /* gradiente aquí */
+  padding: 2rem 12rem 0rem 4rem;     /* suficiente padding interior */
+  height: 100%;                       /* que ocupe todo el alto */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  
+  border-radius: 8px 0 0 8px;
+  width: 100%;                         /* que ocupe todo el ancho de la columna */
+  box-sizing: border-box;              /* importante para que padding no desborde */ 
+}
+
+.sobre-texto h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.sobre-texto h3 {
+  font-size: 1.3rem;
+  color: #1C541D;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.sobre-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.btn-light {
+  background-color: #1C541D;
+  color: white;
+  border: 2px solid #1C541D;
+  padding: 12px 35px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.btn-light:hover {
+  background-color: #2D7A2E;
+  border-color: #2D7A2E;
+  transform: scale(1.02);
+}
+
+.sobre-imagen {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: white;  /* fondo base blanco */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+}
+
+.sobre-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* =========================================== COMPRA Fácil y Rápida ================================= */
+.compra-rapida {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: white;
+}
+
+.compra-rapida h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.compra-rapida h2::before,
+.compra-rapida h2::after {
+  content: '';
+  flex: 1;
+  height: 1.2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 600px;          /* el contenedor no pasa de 600px */
+  margin: 0 auto;
+}
+.btn-wa {
+  text-decoration: none; /* quita el subrayado */
+
+  background-color: #25D366;
+  color: white;
+  border: 2px solid #25D366;        /* borde del mismo color */
+  font-size: 1.1rem;                 /* igual que btn-light, btn-link */
+  border-radius: 4px;                /* rectangular (esquinas rectas) */
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  flex: 1 0 0;               /* que crezcan desde 0 */
+  min-width: fit-content;    /* que no encojan más que su contenido */
+  text-align: center;
+  padding: 12px 20px;
+}
+
+.btn-wa:hover {
+  background-color: #20bd5a;         /* un poco más claro */
+  border-color: #20bd5a;
+  transform: scale(1.02);             /* mismo efecto que los otros */
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); /* brillo sutil */
+}
+
+.btn-call {
+  text-decoration: none; /* quita el subrayado */
+  background-color: #e74c3c;        /* rojo vivo */
+  color: white;
+  border: 2px solid #e74c3c;
+  font-size: 1.1rem;
+  border-radius: 4px;                /* rectangular */
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  flex: 1 0 0;               /* que crezcan desde 0 */
+  min-width: fit-content;    /* que no encojan más que su contenido */
+  text-align: center;
+  padding: 12px 20px;
+}
+
+.btn-call:hover {
+  background-color: #c0392b;         /* rojo más oscuro al pasar */
+  border-color: #c0392b;
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);  /* brillo rojo */
+}
+
+.btn-wa i, .btn-call i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+/* ========================================== PRÓXIMAMENTE =========================================== */
+.proximamente {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.proximamente h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.proximamente p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ============================================== FOOTER =========================================== */
+.footer {
+  background-color: #1a2632;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ======================================== RESPONSIVE ============================================== */
